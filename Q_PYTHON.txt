@@ -1,0 +1,97 @@
+README
+
+1. Run a python file on Mac.
+1.1. Verificar si se tiene instalado Python3 con 
+	%python3 --version. 3.9.9 por ejemplo. 
+En la terminal navegar hasta el archivo .py y ejecutar 
+	%python3 name_file.py.   
+El comando %python name_file.py is to execute Python 2.
+1.2 Consider that could have two versions of pip (package manager): pip, pip3.
+These are two application to install, update and manage packages and libraries
+Fro python. But pip and pip3 can be linked by two versions of python3.
+For example pip could work for python3.9 and pip could work for python3.11
+
+0.6.1 ¿Cómo guardar una imagen rgb en cv2?
+	Res: https://www.geeksforgeeks.org/python-opencv-cv2-imwrite-method/
+
+0.6.2 ¿Cómo guardar una gráfica con matplotlib?
+	Res: https://chartio.com/resources/tutorials/how-to-save-a-plot-to-a-file-using-matplotlib/
+
+0.4.9.1 Instalar open CV2 en Mac.
+	Sol. Inistalarlo desde brew.sh:
+	% brew install opencv
+	Nota: Calvez sea mejor instalar cv2 usando pip3.
+
+0.4.10 Determinar donde se instaló un paquete descargado con homebrew:
+	Sol: para encontrar el lugar donde se instaló el paquete o programa ejecutamos: % brew --prefix [package]
+	% brew --prefix opencv
+	devuelve: “/opt/homebrew/opt/opencv” Nota opt es una carpeta oculta.
+	$ brew info [package]
+
+0.4.23 Problema al instalar PyMesh:
+	- No funciona correctamente instalar PyMesh con PyPi.org
+	- Lo correcto es seguir las instrucciones para Mac sugeridas en la página oficial de PyMesh
+	- Cocretamente seguí los siguientes pasos:
+	- Download the source:  se descarga el código fuente de GitHub con el siguiente código:
+			git clone https://github.com/PyMesh/PyMesh.git
+			cd PyMesh
+			git submodule update --init
+			export PYMESH_PATH=`pwd`
+	Se crea una carpeta llamada PyMesh en la carpeta de usuario. 
+	- Se instalan las dependencias: primero se instalan algunas dependencias usando
+			port install
+    			python36 \
+		    	eigen3 \
+    			gmp \
+    			mpfr \
+    			tbb \
+   			boost
+	y luego se instalan dependencias genéricas como numpy y scripy. Para esto se ejecuta
+			pip install -r $PYMESH_PATH/python/requirements.txt
+	que va a buscar y ejecutar el archivo text correspondiente en la carpeta usr/PyMesh/python/requirements.txt
+	- Luego se construye el módulo con
+			python3 ./setup.py build
+	- Finalmente se instala el el paquete, pero aquí apareció un par de problemas: primero se quiere usuario root, y 	segundo se debe especificar la versión de python, por que si se ejecuta con python2 nos aparece un error. Esto se soluciona con el código siguiente:
+			sudo python3 ./setup.py install 
+	- Finalmente para verificar se usa pip freeze y debe aparecer el paquete.
+			https://github.com/PyMesh/PyMesh/issues/90
+
+0.4.24 No es posible instalar PyMeshLab. No es solucionable:
+		https://github.com/cnr-isti-vclab/PyMeshLab/issues/71
+
+0.4.25 Error con cv2: module 'cv2' has no attribute 'gapi_wip_gst_GStreamerPipeline' #387
+	Sol: sudo pip install "opencv-python-headless<4.3"
+	Ref: https://github.com/Rudrabha/Wav2Lip/issues/387
+
+0.4.26 Shallow and deep copy (important)
+import copy
+import numpy as np
+A = np.array([[1,2,3],[4,5,6],[7,8,9]])
+B = A # Shallow copy
+C = np.copy(A) # Deep copy
+D = copy.copy(A)  # Deep copy
+A[0,0] = A[0,1] = A[0,2] = 5
+print("B = \n", B, '\n') 
+print("C = \n", C, '\n') 
+print("D = \n", D, '\n')
+"""
+A is modified along with B.
+"""
+B[2,0] = B[2,1] = B[2,2] = 7
+print("A = \n", A, '\n')
+
+0.4.32 Instalación de tkinter.
+Sol. Lo normal es usar % pip install tk
+Sin embargo en caso de que no funcione intentar: % brew install python-tk
+
+0.4.33 Instalación de scipy
+Hay varios errores al instalar scipy=>1.9.0. Uno de ellos tiene que ver con que se encuentra instalado openblas. Se solucionó checando si estaba el openblasj instalado: %brew info openblas. Si está instalado ejecutar %export PKG_CONFIG_PATH="/opt/homebrew/opt/openblas/lib/pkgconfig"
+
+0.4.34 Información general sobre los paquetes que se instalan con pip o pip3. Todos los paquetes o líbrerías se instalan en la carpeta %~/opt/homebrew/lib/
+En esta carpeta se se encuentras las librerías, en particular, se encuentran las librerías instaladas en cada uno de los pythons. Hasta el 2023, está instalados python3.9, python3.10, python3.11 y python3.12 y hay una carpeta en /opt/homebrew/lib/ para cada uno de estas versiones . El programa pip está enlazado a python3.9 y el programa pip3 está enlazado a python3.11. Por lo tanto al se instala algo con pip o pip3 lo que se hace es instalar en dichas carpetas. Es decir la memoria neta ocupada en el sistema por las librerías es el peso de las carpetas python3.X en /opt/homebrew/lib/. Notese que cuando se instala una librería, también se instalan las dependencias, por lo instalación ocupa más espacio que luego no es eliminado al desinstalar la misma librería.
+
+
+--------------------------------------------------------------------------------
+Problems, errors an Questions using PYTHON
+
+0.0 Installation
