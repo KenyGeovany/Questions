@@ -1,0 +1,91 @@
+README
+
+0.5.5 ¿How to use screen?
+	Res: https://linuxize.com/post/how-to-use-linux-screen/
+
+0.5.7 ¿What is Source Command in Linux and How Does it Work?
+	Res: https://linuxhandbook.com/source-command/
+
+0.6.5 Ver archivos ocultos en terminal
+	Sol. %ls -a
+	Ref: https://www.solvetic.com/tutoriales/article/5846-como-ver-archivos-ocultos-linux-terminal/
+
+0.5.1 Borrar carpetas y archivos.
+	Sol. Borrar una carpeta con todos sus archivos enviándolos a la papelera:
+	% rm -R folder_name
+	Borrar un archivo (verificar si es permanente o no)
+	% rm file_name
+	Borrar un archivo o carpeta de forma segura (Recomendable)
+	cmd + retro
+
+0.6.10 Borrar archivos en un directorio
+	Sol. % rm -r directorio/*
+
+0.5.2 Mover archivos y directorios
+	Sol. mv [options] [source] [destination]
+	Ref: https://phoenixnap.com/kb/move-directory-linux
+
+0.5.10 Algunos comandos básicos para obtener información de un directorio
+- Obtener el tamaño de un directorio:
+	%du -sh name_directory
+- Para obtener información general sobre un archivo/directorio se usa la función stat
+	% stat name_file_or_dir
+- Obtener la fecha en la que se accedió al contenido de un directorio:
+	%stat -c %x name_file_or_dir
+- Obtener la fecha de última modificación del contenido de un directorio:
+	%stat -c %y name_file_or_dir
+- Obtener la fecha de cambio (ctime), es decir la última vez que se modificaron los metadatos 
+asociados al archivo.
+	%stat -c %z  name_file_or_dir
+- Mostrar los permisos del formato actual
+	%stat -c %a name_file_or_dir
+- Mostrar nombre del propietario del archivo
+	%stat -c %U name_file_or_dir
+- Mostrar el nombre del grupo propietario del archivo
+	%stat -c %G name_file_or_dir
+- Mostrar el tipo de archivo
+	stat -c %F name_file_or_dir
+Nota: Ejecutar du -sh para ver el tamaño del directorio actual detecta esto como un acceso para todos
+Los subdirectorios. Por la tanto para ver la fecha de acceso de los archivos/dir sin acceder es necesario 
+Ejecutar du -sh con el argumento del nombre del archivo/dir.
+
+0.6.12 Ver el número de archivos en un directorio en terminal
+Sol. 
+# Contar el número de archivos en un directorio
+num_files=$(ls -l /ruta/al/directorio | grep "^-" | wc -l)
+# Imprimir el resultado
+echo "El número de archivos en el directorio es: $num_files"
+Ver el número de archivos en todos los directorios dentro de un directorio “dir”
+
+0.6.13 Ver el número de archivos en todos los directorios dentro de un directorio “dir”
+%find dir -type d -exec sh -c 'echo -n "{}: "; ls -1 "{}" | grep -v "^\.$" | wc -l' \;
+
+Si ya estas en la carpeta donde están los subdirectorios se pone un punto que indica la carpeta actual
+find . -type d -exec sh -c 'echo -n "{}: "; ls -1 "{}" | grep -v "^\.$" | wc -l' \;
+
+0.6.14 Enumerar archivos en un directorio. Fuente:https://chujalt.com/thread-22-post-22.html
+Vamos a ver un script en bash el cual ordena los archivos de un directorio, lo que hace es enumerarlos, es decir, mantiene el nombre del fichero pero le pone delante el número de orden, 1-_-unarchivo, 2-_-otroarchivo... etc. Primero veamos el script y luego comentamos:
+
+Código:
+#!/bin/sh
+i=1
+for f in *.*
+do
+  renombrar="$i"-_-"${f#*}"
+  mv "$f" "$renombrar"
+  i=$((i+1))
+done
+
+Este script se debe ejecutar en el directorio donde están los archivos a enumerar. El script enumera todos los archivos del directorio, pero si queremos que, por ejemplo, sólo enumere los archivos con extensión mp3 deberemos cambiar la línea for f in *.* por for f in *.mp3 
+Otro ejemplo, vamos a suponer que en ese directorio hay varios tipos de archivos (mp3, mp4, wav) y queremos enumerarlos por separado. Entonces vamos a reservar la serie 1000 para los archivos mp3, la serie 2000 para mp4... etc. Entonces cambiaremos la línea que hemos comentado antes y donde pone i=1 lo cambiaremos por i=1000, para los archivos mp4 cambiaremos for f in *.* por for f in *.mp4 e i=1 por i=2000 y así sucesivamente. Ahora vamos a suponer que por cualquier razón, por ejemplo que tenemos archivos nuevos y hay que borrar la numeración para luego volver a enumerarlos, entonces ejecutaremos este script:
+
+Código:
+#!/bin/sh
+for f in *.*
+do
+  renombrar=${f##*-_-}
+  mv "$f" "$renombrar"
+done
+
+Esto dejará el archivo con su nombre original, sin la numeración. Acordaros que como está el script quitará la numeración a todos los archivos, si queréis hacerlo en una extensión en concreto deberéis ponerla.
+

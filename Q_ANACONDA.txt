@@ -1,0 +1,14 @@
+README
+
+0.6.3 Obtener lista de paquetes/librerías instalados en Anaconda
+	Sol. conda list
+		- En un entorno virtual
+		conda list -n myenv
+		- Un paquete específico
+		conda list html5lib
+		- Similar a pip freeze
+		conda env export
+		Ref: https://www.mejorcodigo.com/p/379.html
+
+0.6.4 Manejar entornos virtuales en anaconda:
+	Res: https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#activating-an-environment

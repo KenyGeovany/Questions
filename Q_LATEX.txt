@@ -1,0 +1,51 @@
+README
+
+0.4.12 Des-incrustar el visualizador de pdf en TexMaker:
+	sol. En la parte superior izquierda ir a: TexMaker > preferencias > Ordenes > Visualizador de PDF > incrustar (off)
+
+0.4.13 Cuando escribimos el simbolo ~ en el látex y compilamos, la compilación se detiene. 
+	Sol.
+
+0.4.17. Instalar paquetes en el latex en linux. 
+	Sol. $ \usepackage[spanish]{babel}
+
+	Si hemos instalado la versión sencilla de TeXLive y añadimos esa línea a nuestro tex nos dará error al compilar porque nos falta el paquete de español. Bien, vamos a buscarlo. Hacemos:
+		$ apt-cache search texlive spanish
+	Veremos lo siguiente:
+		$ texlive-latex-extra - TeX Live: LaTeX additional packages
+		$ texlive-doc-es - TeX Live: transitional dummy package
+		$ texlive-lang-spanish - TeX Live: Spanish
+		Esto nos da una pista de donde vive el paquete: en el grupo de paquetes adicionales (texlive-latex-extra) o en uno específico de idioma (texlive-lang-spanish). Yo instalé el segundo. 
+		$ sudo apt-get install texlive-doc-es - TeX Live: transitional dummy package
+
+0.4.18. Instalar paquetes en el latex en Mac.
+	Sol. Verificar si se tiene instalado tlmgr: % tlmgr --version
+		Verificamos el nombre del paquete: % tlmgr search name_package
+		Una vez ubicado el nombre del paquete instalamos con: % tlmgr install
+		Luego procedemos a instalar con: % sudo tlmgr install name_package
+		Es necesario poner sudo para tener permisos de administrador, igualmente se puede modificar los permisos manualmente, pero no hay que olvidar desactivarlos la final. 
+		Actualizar tlmgr % sudo tlmgr update --self
+		Actualizar paquete. % sudo tlmgr update svg
+
+	Sol: Instalamos inskape con el dmg de la página oficial.
+	Agregar variables de entorno 	Para usar la línea de comando, debe agregar la ruta a la ruta 	Ruta del archivo ejecutable: 	versión antigua：/Applications/Inkscape.app/Contents/Resources/bin/inkscape 	nueva versión：/Applications/Inkscape.app/Contents/MacOS/inkscape
+	# Agregar variables de entorno
+	% alias inkscape="/Applications/Inkscape.app/Contents/MacOS/inkscape"
+	% inkscape --version
+	% Inkscape --help
+	Creamos archivos auxiliares, el archivo .pdf generado debe estar necesario en la carpeta principal
+	% inkscape -D -z --file=image.svg --export-pdf=image.pdf --export-latex
+	or
+	% inkscape -D image.svg  -o image.pdf --export-latex
+
+	% inkscape -D -z --file=LOGO_UNIVERSITY.svg --export-pdf=LOGO_UNIVERSITY_svg-tex.pdf	
+	Adjuntamos en el latex
+	%\def\svgwidth{7cm}
+    	%\input{Imagenes/LOGO_UNIVERSITY_svg-tex.pdf_tex}
+
+	Otro método(mejor que el anterior):
+	Primero los archivos .pdf y .pdf_latex creados en la parte anterior se deben en colocar en la carpeta principal. (El original no es necesario). Luego incluir la bandera --shell-escape en la orden de pdflatex como sigue:
+	Ir a preferencias de texmaker (cmd + ,) al apartado “órdenes” y en la parte de “PdfLatex” escribir
+ 	"pdflatex" -synctex=1 -interaction=nonstopmode --shell-escape %.tex
+	Luego compilar con este cambio. Esta bandera creará una nueva carpeta en la carpeta principal llamada “svg-inkscape” el cual contendrá los dos archivos .pdf y .pdf_latex. Y a la vez la compilación se debe ejecutar correctamente. El erro que comúnmente pasa cuando no se sigue este procedimiento es usualmente el siguiente:
+	! Package svg Error: File `LOGO_UNIVERSITY_svg-tex.pdf' is missing.

@@ -1,0 +1,16 @@
+README
+
+0.4.4 No es posible leer un txt que este en un directorio de la carpeta proyecto en CLion, aunque si se ejecute correctamente el comando en terminal. 
+	Sol. El problema es que el directorio con el txt debe estar dentro de la carpeta debug “cmake-build-debug”. Para no tener que mover este directorio dentro de esta carpeta debemos ir a la opción en la parte superior izquierda del IDE, “project|debug”, luego vamos a Edit Configurations > Working directory > path/project, debemos escribir el path del directorio del proyecto o buscarlo con el icono de la carpeta. Con eso ya debe ejecutarse el programa.
+
+0.4.5 Compilar y ejecutar un projecto con atajos de teclado:
+	Sol. Cmd + fn + f9 : compilar,  ctrl + R : ejecutar.
+
+0.4.6 Crear un proyecto en CLion a partir de archivos .c ya existentes:
+	Sol. En la ventana “”Welcome to CLion” New project > C/C++ Ejecutable/Library > Title & CXX > create > Open project >  click on main.c > Create CMakeList.txt (en la pestaña superior) > ok > Trust project
+
+0.4.19 Abrir proyectos (en dos ventanas) de CLion simultáneamente:
+	Sol. Arrastrar la carpeta de cada proyecto hasta el icono de CLion.
+
+0.4.21. No se puede refactorizar una variable en CLion.
+	Sol. Borrar la carpeta “Cmake-build-debug” y “.idea”. Abrir un archivo y crear un proyecto nuevo. También puede pasar por que el archivo .c no esté en el cmake; en este caso solo escribir el nombre del archivo .c y recargar el cmake.s

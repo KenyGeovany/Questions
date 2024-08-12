@@ -1,0 +1,23 @@
+README
+
+0.4.16 Problema al crear un proyecto de pycharm desde un archivo inicial ya creado.
+	Sol. Primero ejecutar el archivo py con pycharm. Dar click en 
+		Abrir pycharm > open > seleccionar la carpeta que contiene el main. Se debe abrir el programa.
+		Preferencias > Project: name_program >python interpreter > Add > Add python interpreter > ok
+		Add configuration (en la esquina superior derecha) > Add new > python > Run/debug configurations > Script path: Seleccionar la ubicación del main.py; Python interpreter: Python 3.x (folder_project) > ok
+
+El python interpreter 3.x solo aparece después de haber creado el entorno virtual. Este entorno virtual únicamente contiene los siguientes paquetes: pip, setuptools, wheel. Los paquete instalados se pueden ver en: folder_project > venv > lib > python 3.x > site-packages. Otra manera es en la terminal, nos dirijimos a la carpeta venv/bin dentro de la carpeta proyecto, luego ejecutamos:
+Para activar el entorno virtual
+% source activate
+Para desactivar el entorno virtual
+% deactivate
+
+Para ver los paquetes instalados, activamos el entorno y ejecutamos
+%  pip freeze (no cuenta los modelos pip, setup tools, wheel)
+Para instalar un paquete, e.g. bumpy, se puede hacer con el comando
+% python3 pip install name_package (agregar el -m)
+El nombre exacto del paquete se encuentra en la página pypi.org. Para verificar la instalación podemos abrir el Shell de python3 del entorno virtual con
+%python3
+Luego escribir
+>>> help(‘name_package’).  (Para salir >>> exit())
+Si aparece un menu de ayuda y no un mensaje de error entonces el paquete está instalado. Aún mas con pip frece se debe observar el paquete.

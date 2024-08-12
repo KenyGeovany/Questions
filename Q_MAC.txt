@@ -1,0 +1,29 @@
+README
+
+0.4.9.0 Instalar Homebrew (manejados de paquetes)
+Url: https://brew.sh
+% /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+==> Next steps:
+- Run these two commands in your terminal to add Homebrew to your PATH:
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> /Users/name_user/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+% brew help
+
+0.6.11 Convertir un video de mas de 1 GB en Mac. 
+	Sol. Descargar VLC y usar la opción Archivo/convertir para convertir el video a .m4v o webm. Si funciona el primero entonces ya acabamos, si no, usamos el segundo que hará una conversión a web disminuyéndo sin perder la consistencia del video y luego usamos una aplicación online para convertirlo a mp4.
+
+0.4.3 Descargar una App para leer Archivos DjVu. 
+	Sol. Descargar DjVuLibre.dmg en https://sourceforge.net/projects/djvu/ 
+
+0.4.14 Instalar zshell en el ubuntu (emulador):
+	Sol: $ sudo apt install zsh
+		$ zsh --version
+
+0.4.27 Problema al copiar/mover un archivo/carpeta de la Mac a un Disco Duro: “No se puede completar la operación porque no es compatible.”
+	Sol. En terminal, ejecutar el comando dot_clean
+		% dot_clean /Volumes/RESPALDOS/namefile
+		Solución parcial. No siempre funciona.
+
+0.4.28 Incompatibilidad de HDD en Mac
+	Sol. En vez de usar Fat32 y NFTS usar ExFat. Es necesario formatear el HDD.
+
