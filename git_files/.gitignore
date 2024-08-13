@@ -1,0 +1,6 @@
+lib/*
+!lib/master_autocomplete.tex
+!lib/master_commands.tex
+!lib/master_packages.tex
+!lib/master_portada.tex
+!lib/.gitkeep
