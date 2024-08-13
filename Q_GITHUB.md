@@ -286,6 +286,14 @@ Create a tag with the same name and push it.
 Go to settings → rename the project. To update the local repository:
 	%git remote set-url origin
 
+8.11 Use of fork (Only GitHub)
+- Do a fork: fork -> clone -> modify the file -> add, commit, push
+  If you are accesing to another count but in the same PC, then first delete the
+  credentials, do push and then re-enter with your acount and pasword.
+- Pull request: Pull request -> New pull request -> create pull requests ->
+  -> rellenar el mensaje -> create pull request.
+- En el perfil del dueño del proyecto: 
+
 ***************************************
 # Issues, Errors and Questions.
 ***************************************
