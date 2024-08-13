@@ -292,7 +292,7 @@ Go to settings → rename the project. To update the local repository:
   credentials, do push and then re-enter with your acount and pasword.
 - Pull request: Pull request -> New pull request -> create pull requests ->
   -> rellenar el mensaje -> create pull request.
-- En el perfil del dueño del proyecto: Ir al pull request -> files changed,
+- Into the owner profile: Ir al pull request -> files changed,
   to see the changes added, then use:
   review changes -> Comment (Stand by)
   		    Approve (Merge)
