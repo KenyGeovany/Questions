@@ -1,0 +1,57 @@
++----------------------------------------+
+| SSH                       (20.12.2023) |
++----------------------------------------+
+
+***************************************
+# Instructions to Use SSH
+***************************************
+
+Variables:
+- "<user>": Account name on the server
+- "<host>": IP address or domain name of the server.
+- "8888": Remote port. 
+
+
+1. Ingresar al cluster
+	% ssh -p 8888 <usuario>@<host>
+
+2. Descargar archivos/directorios del cluster a local por SSH en Linux-unix:
+	% scp <usuario>@<host>:~/remote_file_name ~/local_dir_name
+	% scp -r -P 8888 <usuario>@<host>:~/remote_file_name ~/local_dir_name
+	% scp -r <usuario>@<host>:~/remote_dir_name ~/local_dir_name
+
+3. Subir archivos/directorios de local a cluster por SSH en Linux-unix:
+- Ir al directorio donde está el archivo a subir:
+	cd Documents/dir_name
+- Si se subirá solo un archivo usar:
+	% scp file_name <usuario>@<host>:/remote_dir
+	% scp -P 8888 file_name <usuario>@<host>:~/remote_dir/
+- Si se subirá todo el directorio:
+	% scp -r -P 8888 dir_name <usuario>@<host>:~/remote_dir/
+Fuente (12.08.2024): https://www.galisteocantero.com/como-copiar-archivos-por-ssh/
+De forma general:
+	% scp <parámetro> <ruta de origen> <usuario>@<host>:<directorio/archivo.extensión>
+Fuente (12.08.2024): https://www.ionos.es/digitalguide/servidores/configuracion/scp-de-linux/
+
+4. Ver detalles sobre el estatus de un trabajo terminado en el cluster:
+	$ sacct -j 55149 --format=JobID,JobName,Start,End,Elapsed,NCPUS
+	$ sacct -S 2024-01-01 -E 2024-01-09 
+Donde 55140 es el JOBID del trabajo.
+Fuente (12.08.2024): https://help.jasmin.ac.uk/docs/batch-computing/how-to-monitor-slurm-jobs/
+	
+0.5.9 (SSH) Slurm commands
+	Sol: - squeue (enlista los proyectos activos) 
+		- sbtach (ejectua un script slurm)
+		- scancel (termina la ejecución de un proyecto) 
+	Ref: https://www.hpc.caltech.edu/documentation/slurm-commands
+
+0.4.36 Ver toda la información en cluster. Solo necesitas conocer el JOBID
+	Sol.  %sacct -j 55150 --format=JobID,JobName,Start,End,Elapsed,NCPUS
+	https://hpc.nmsu.edu/onboarding/supercomputing/slurm/job-statistics/
+	https://docs.rc.fas.harvard.edu/kb/convenient-slurm-commands/
+	Mostrar trabajos en proceso de mi usuario: 
+	%squeue -u tu_usuario
+	Donde tu_usuario = est_posgrado_keny.chin
+	Mostrar el historial de los JOBID
+	%sacct --starttime 2023-12-01
+	Cambiar la fecha a una conveniente

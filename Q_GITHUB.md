@@ -6,7 +6,7 @@
 # Instructions to Use GitHub
 ***************************************
 
-Assume that we have created a directory /Download/GitHub/. 
+Assume that we have created a directory /Documents/GitHub/. 
 This directory must contain all tracked projects.
 
 Variables:
@@ -286,11 +286,11 @@ Create a tag with the same name and push it.
 Go to settings → rename the project. To update the local repository:
 	%git remote set-url origin
 
---------------------------------------------------------------------------------
+***************************************
+# Issues, Errors and Questions.
+***************************************
 
-9. Other Problems, Errors and Questions.
-
-9.1 Updating from MacOS from Big Sur to Monterrey does not update git.
+1. Updating from MacOS from Big Sur to Monterrey does not update git.
 Sol. To solve this problem simply reinstall Xcode-select:
 	% xcode-select --install
 And later reinit the Git:
