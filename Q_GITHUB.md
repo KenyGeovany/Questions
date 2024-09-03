@@ -146,7 +146,7 @@ We will create a new branch named test:
 - Check the current branch
 	%git branch
 - Push the branch to the repository (even if there is no changes)
-	%git push -f origin test:test
+	%git push -f origin test:test_remote
 Changing the branch with checkout all files are reloaded.
 
 5.2 Merge the branch with the main branch:
