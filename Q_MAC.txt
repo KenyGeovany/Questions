@@ -1,6 +1,269 @@
 README
 
-0.4.9.0 Instalar Homebrew (manejados de paquetes)
+0.2.1 Incompatibilidad del procesador M1 con Intel. 
+	Sol. Ejecutar el siguiente comando en la terminal: 
+	% softwareupdate --install-rosetta
+	se debe instalar rosetta 2 que es un emulador de intel.
+
+0.2.2 Mostrar la barra de desplazamiento lateral.
+	Sol. Ir a Preferencias del Sistema > General > Mostrar barras de desplazamiento > siempre.
+
+0.2.3 Botón derecho del Trackpad (mouse).
+	sol. Posicionar un dedo en el centro del trackpad sin presionar y hacer click con otro dedo cerca de donde estaba el primer dedo. También se puede mantener presionado la tecla ctrl + pulsar el trackpad en cualquier punto.
+
+0.2.4 Un programa no se puede abrir porque proviene de un desarrollador no identificado.
+	Sol. Dar click al programa y debe salir una advertencia. Ir Preferencias de sistema (configuración) seguridad y privacidad. Debe salir un mensaje “se bloqueó el programa porque no proviene de un desarrollador identificado” dar click en abrir de todos modos > abrir.
+
+0.2.5 No se pueden instalar todos los paquetes de un programa por que requiere múltiples confirmaciones del paso anterior en tiempo de instalación. Ej. Sage Math, Teo Maker, …
+	Sol. Ejecutar en terminal para habilitar instalación de programas no identificados.
+	% sudo spctl --master-disable
+	Para restablecer la configuración para mayor seguridad escribir
+	% sudo spctl --master-enable
+	Para checar el status actual
+	% sudo spctl --status
+
+0.2.6 Un dedo no es suficiente como contraseña. Configurar más dedos.
+	sol. Ir a Preferencias de Sistema > Touch ID > agregar
+
+0.2.7 Aumentar el tamaño general de las letras de la Mac
+	Sol. Preferencias de Sistema > Pantallas > Ajustada > más grande
+
+0.2.8 Maximizar ventana con atajo de teclado. 
+	Sol. No resuelto.
+
+0.2.9 Limpiar pantalla del Mac.
+	Sol. Usar un “pañuelo de microfibra” y un poco de agua.
+
+0.2.10 Administrar memoria de Disco duro.
+	Sol. IcMac > Acerca de esta Mac > Almacenamiento.
+
+0.2.11 Ubicación de carpetas que no aparecen en la barra lateral izquierda de Finder. Ej. CLionProjects.
+	Sol. En la barra superior de Finder dar click en Ir > Computadora > Macintosh CD > Usuarios > user_name. También se puede usar el atajo cmd + shift (may) + C para ir a la carpeta raíz (Macintosh CD). Es posible navegar a travez de las carpetas posicionándonos con los cursores en la carpeta que deseemos y luego con cmd + up nos vamos a la super carpeta y con cmd + down vemos el contenido de la carpeta.
+
+0.2.12 Grabar pantalla.
+	Sol. Cmd + shift (may) + 5. Al terminar de grabar volver a apretar el mismo comando. El resultado se mostrará en escritorio. Se pueden modificar las opciones para guardar en Documentos y grabar con micrófono. 
+
+0.2.13 Atajo para cortar un archivo o carpeta, para moverlo a otra ubicación.
+	Sol.  Cmd + c y luego option + cmd + v
+
+0.2.14 Problema general. No se puede desmontar un disco virtual de instalación. 
+	Sol. IconMac > Forzar salida > Finder > reiniciar > Desmontar > Forzar expulsión
+
+0.2.15 PROBLEMA IMPORTANTE: No es posible modificar discos duros o USB’s que no estén en formato de Mac. 
+	Sol. Descargar la App Mounty for NTFS. Instalar. En la barra superior debe aparecer el icono de Mounty. Montar el Disco Duro o USB. 
+
+0.2.16 No imprime la impresora HP.
+	Sol. No está claro el problema. Se intentó descargar manualmente el Driver desde la pagina de HP, y luego se intentó cambiando (Barra superior) Impresora > Panel de preferencias > impresoras y escaners > - > camabiar la opción a AirPrint > +, también se intentó cambiando la privacidad pero parece que esto no funcionó. Finalmente se procedió a desconectar y desconectar el cable USB, se esperó un rato y luego de pronto empezó a imprimir. Este es posiblemente el problema más difícil de resolver.
+
+0.2.17 Cambiar entre ventanas de una misma aplicación.
+	Sol. Cmd + ´(¨)
+		cmd + tab
+		cmd + shift + tab
+
+0.2.18 Descargar un pdf abierto en safari. Left click > abrir con vista previa > ctrl + s > descargas > guardar.
+
+0.2.19 Sobrecalentamiento de la Mac cuando se atora un programa, e.g. cuando no compila un archivo Tex en Teo Maker.
+	Sol. No solucionado.
+
+0.2.20 Desactivar atajo de teclado cmd + Q que cierra una ventana. Se confunde con option + Q = @.
+	Sol. Preferencias de sistema > Teclado > Funciones rápidas > Accesibilidad > Activar “Invertir colores” > Click encima del atajo y teclear el atajo nuevo.
+
+0.2.21 Cortar y pegar en Finder.
+	Sol. cmd + c: para cortar.
+		cmd + option + v: para pegar.
+
+0.2.22 Ordenas subcarpetas por tamaño (cuando no tiene tamaño explicitamente)
+	Sol. Dentro de la carpeta a ordenar ir a:
+		visualización > Mostrar opciones de visualización > Agrupar por: Ninguno; Ordenar por: tamaño; 
+		calcular los tamaños == 1
+
+0.2.23 Seleccionar un conjunto de archivos de manera eficiente:
+	Sol. Seleccionar varios archivos: mantener presionado la tecla cmd, y hacer click en los elementos a seleccionar.
+		Seleccionar varios archivos adyacentes: Click en el primer elemento, luego shift (mayusc) y click en el último elemento.
+		Seleccionar varios archivos adyacentes 2: Click en el primer elemento, shift, y luego click en up, down, left, right.
+
+
+2.2.24 Instalar Virtual Box.
+	Sol. Solución parcial al 2021. No funcionar virtual box: Requires: macOS >= 10.13, Intel 64-bit architecture . Checado en Homebrew. 
+		
+		Instalar UTM o QEMU.  (Maquina virtual)
+
+		Descargamos UTM: https://mac.getutm.app
+
+		Descargamos el ISO: Ubuntu 20.04.3 LTS, para ARM64 bit-processors
+		URL: https://ubuntu.com/download/server/arm
+
+		Instalamos UTM copiando la app a la carpeta de aplicaciones. Desmontamos el instalador. Ejecutamos UTM. New VM > 
+
+		Para instalar GUI
+		$ sudo apt-get update
+		$ sudo apt install tasksel
+		$ sudo tasksel install ubuntu-desktop
+		$ sudo reiniciar
+		$ sudo reboot		
+
+		Habilitar el uso compartido de portapapeles y directorios
+		$ sudo apt instalar spice-vdagent spice-webdavd
+		
+		Explore el directorio compartido en:
+		http://127.0.0.1:9843/
+		$ firefox http://127.0.0.1:9843/
+
+		Ref: https://www.youtube.com/watch?v=A0LNG4rITw0
+		
+		Modificar idioma de teclado (error común): 
+		$ sudo apt-get install console-data     (?)
+		Español Latinoamericano
+		$setxkbmap latam
+		Español
+		$setxkbmap es
+		Ingles
+		$setxkbmap us
+		
+		Instalar gcc,valgrind,code blocks, make, make:
+		GCC:
+		$ sudo apt-get update
+		$ sudo apt-get build-essential
+		$ gcc --version  
+		Valgrind:
+		$ sudo apt-get install valgrind
+		$ valgrind --version   (para verificar)
+		Codeblocks:
+		$ sudo add-apt-repository ppa:damien-moore/codeblocks-stable
+		$ sudo apt update
+		$ sudo apt install codeblocks codeblocks-contrib
+		$ codeblocks --version
+		Make:
+		$ sudo apt-get update
+		$ sudo apt-get install make
+		$ make --version
+		CMake:
+		$ sudo apt-get update
+		$ sudo apt-get install cmake
+		$ cmake --version
+
+0.2.25 Instalar valgrind
+	Sol. No solucionado. Solo existe para Intel (64-bit linux) Checado en Homebrew
+		https://clang.llvm.org/docs/LeakSanitizer.html 
+		leakSanitizer solo funcionar en Mac de arquitectura intel.
+
+0.2.26 Evitar activación de em dash cuando escribimos doble guión.
+	Sol. Copiar y pegar lo siguiente: --
+		Lo más efecto es cmd + z para retroceder y evitar el cambio.
+
+0.2.27 Instalar y usar QEMU para emular MSDOS
+	Sol. https://www.youtube.com/watch?v=SkNAg2RYiF4&t=91s
+		
+		Primero instalamos QEMU. 
+		Existen varios métodos pero solo el último me funcionó. Los primeros 4 se  aconsejan en la página oficial de qemu, pero todos fallaron. 
+		Método 1: % brew install qemu 
+				Problema: no encuentro en donde se instaló qemu
+		Método 2: % sudo port install qemu
+				Problema: no se ejecutó el comando
+		Método 3:
+			% wget https://download.qemu.org/qemu-6.2.0.tar.xz
+			% tar xvJf qemu-6.2.0.tar.xz
+			% cd qemu-6.2.0
+			% ./configure
+			% make
+			Problema: Se descarga el archivo, pero no se ejecuta bien el archivo ./configure, ni make.
+		Método 4: 
+			% git clone https://gitlab.com/qemu-project/qemu.git
+			% cd qemu
+			% git submodule init
+			% git submodule update --recursive
+			.% /configure
+			% make
+		En teoría este método funciona, pero no fue terminado de testear por que se usó el método 5, sin embargo el error se debe a que no se encuentra el programa ninja. De cualquier manera se usan las primeras instrucciones en el método 5.
+		Método 5: Ir a la página de gitlab donde se aloja qemu, descargar el archivo, o clonarlo con 
+			% git clone https://gitlab.com/qemu-project/qemu.git
+			Es importante ubicar la carpeta en la carpeta de aplicaciones para tener bien ubicado el programa. Yo lo puse en la carpeta de usuario, pero fue un error.
+			Una vez clonado el archivo seguir las instrucciones del README. En si hay que ejecutar:
+			% mkdir build
+			% cd build
+			% ../configure
+			% make
+			Sin embargo puede que al intentar ejecutar ../configure nos solicite instalar ninja:
+			% brew install ninja
+			% ninja --version
+			y luego ejecutamos el configure y el make. Inmediatamente debe iniciar la compilación el cual dura un rato,
+		Método 6: https://en.wikibooks.org/wiki/QEMU/Installing_QEMU
+				   1. git clone git://git.qemu-project.org/qemu.git[4]
+                    2. cd qemu
+                    3. git submodule init
+                    4. git submodule update --recursive[5]
+                    5. git submodule status --recursive
+                    6. git checkout stable-2.9[6]
+                    7. mkdir build
+                    8. cd build
+                    9. ../configure[7]
+                    10. make -j$(nproc)
+	Podemos verificar la instalación con el siguiente test:
+		% qemu-img —version
+
+	Una vez instalado creamos una carpeta DISCOS (u otro nombre) en la carpeta de qemu. Descargamos una versión de MSDOS de la página
+
+https://winworldpc.com/download/32c3b1c3-ab70-e280-a64c-11c3a4c2ac5a
+
+Elegí la de (Kansas City, US). Descomprimimos y movemos a la carpeta DISCOS. Entramos dentro de la carpeta  Microsoft MS-DOS 6.22 Plus Enhanced Tools (5.25), y luego ejecutamos:
+
+		% qemu-img create -f qcow2 msdos.disk 2G
+
+Para crear una imagen de disco con capacidad de 2G. Luego ejecutamos:
+
+		% qemu-system-i386  -cpu pentium -hda msdos.disk -fda DISK1.IMA -boot a -m 64
+		
+		ctrl + alt + g : para liberar el mouse de la MV.
+		ctrl + alt + 2 : para abrir la los comandos de qemu
+		ctrl + alto + 1 : para regresar a la MV.
+	
+		Durante la instalación nos pedirá que cambiemos de disco por lo que abrimos el comando de qemu y ejecutamos:		
+
+		(qemu) change floppy0 DISK2.IMA
+		…
+		(qemu) eject floppy0
+
+	El último comando es para sacar los disquetes. Cerramos la MV. Ahora ejecutamos el SO con el comando
+
+		% qemu-system-i386  -cpu pentium -hda msdos.disk  -boot c -m 64
+
+		https://www.youtube.com/watch?v=SkNAg2RYiF4&t=91s
+		https://www.youtube.com/watch?v=JnPhcWIhHQc
+		https://www.youtube.com/watch?v=F-7s8NOLoPQ
+		https://en.wikibooks.org/wiki/QEMU/Monitor
+
+https://mac.getutm.app/guide/
+https://www.adaweb.es/comandos-para-apagar-y-reiniciar-ubuntu/
+
+0.2.28 Grabar pantalla de forma ligera.
+	Sol. Descargar TiniTake (Debut) por dmg.
+
+0.2.29. Activar modo desarrollador en Mac (permite inspeccionar elementos en safari)
+	Sol. Safari > preferencias > Avanzado > Activar menú Desarrollo en barra de menús > Cerrar
+		Pestaña Desarrollo > Mostrar código fuente
+
+0.2.30 Desactivar algunos atajos de teclado de F11 etc, para poder usarlos en otro programa. F11 sirve para mostrar escritorio, algo útil cuando se necesita algo del escritorio, sin embargo Texmaker hace uso de F11 para compilar Bibtex, por lo que si está activado F11, esta función no hare el compilamiento.
+	Sol. Para desactivarlo ir a Preferencias del sistema > Teclado > Funciones rápida > desactivar F11. 
+		Nota: la compilación del tex es con F6 y para ver el pdf es F7.
+
+0.2.31 Ubicación del python instalado por medio de Homebrew: 
+	Sol. Opt > homebrew > bin > python3.9
+
+0.2.32: Bugs:
+	1. En latex al escribir ~
+	2. De vez en cuando se atora el latex y tarda un rato en responder (posible bug con ^)
+	3. Se atoran muy seguido (casi siempre) los pdf abierto en el navegador.
+	4. En ocasiones la pantalla de la Mac se enciende y apaga sola.
+
+0.2.33 Donde puedo ver los pagos realizados en subscripciones por la Mac?
+	Sol: https://reportaproblem.apple.com/?s=6
+
+
+
+
+-------------------------------------------
+
+0.4.9.0 Instalar Homebrew (manejador de paquetes)
 Url: https://brew.sh
 % /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ==> Next steps:
@@ -21,7 +284,7 @@ Url: https://brew.sh
 
 0.4.27 Problema al copiar/mover un archivo/carpeta de la Mac a un Disco Duro: “No se puede completar la operación porque no es compatible.”
 	Sol. En terminal, ejecutar el comando dot_clean
-		% dot_clean /Volumes/RESPALDOS/namefile
+		% dot_clean /Volumes/dir_name/namefile
 		Solución parcial. No siempre funciona.
 
 0.4.28 Incompatibilidad de HDD en Mac
