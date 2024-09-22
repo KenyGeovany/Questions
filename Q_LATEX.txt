@@ -1,5 +1,55 @@
 README
 
+0.2.38 En latex para girar una página:
+Sol. Usar landscape: 
+\begin{landscape}
+\end{landscape}
+Y para ajustar del tamaño de una página:
+\usepackage{geometry}
+\geometry{
+    papersize={30in,22in}, % Cambiamos el tamaÃ±o del papel
+    left=0cm, % Ajustamos los mÃ¡rgenes izquierdo y derecho
+    right=0cm,
+    top=2cm, % Ajustamos los mÃ¡rgenes superior e inferior
+    bottom=0cm,
+}
+
+0.2.39 Dividir un frame en partes y enumerar automáticamente en un beamer
+Sol. \begin{frame}[allowframebreaks, noframenumbering] \frametitle{Bibliography} \end{frame}
+
+0.2.40 Compilar con bib en vez de bibtex.
+Sol. Ir a preferencias -> commands -> bib(la)tex y configurar. En vez de usar “bibtex” build/%.aux, usar "biber" build/%.
+
+0.4.41 Final de linea en latex:
+Sol. Hay 3 métodos:
+	1. \par: Inicia nuevo párrafo con sangría.
+	2. \newline: Inicia nueva linea sin sangría.
+	3. \linebreak: termina una linea justificándola si es necesario. \nolinebreak
+		\linebreak[n], donde n es un número del 1 al 4
+	4. \\, \\[3mm] : separación simple (overleaf no lo recomienda).
+	5. \smallskip, \medskip o \bigskip.
+
+0.4.42 Guiones en latex:
+	1. - : Guíon de texto.
+	2. - -: Guíon para numerosos 4–8
+	3. - - -: Guión ortográfico.
+	4. \- : para dividir una palabra al final de una linea.
+
+0.4.43 Más símbolos para texto: \usepackage{marvosym}, por ejemplo: \EUR, \Smiley, \NoIroning
+
+0.4.44 \displaystyle y \textstyle e.g. $$ \sum_{n=1}^\infty{\textstyle \frac1{2^n}}=1 $$ donde la fracción está en modo text y el resto en modo display.
+
+0.4.45 \, (que produce un espacio pequeño) y \␣(que produce un espacio normal). Además está \!, que produce un espacio negativo. $$dy = 2x\,dx$$ 
+
+0.4.46 Tex acepta $a’^i$, pero no $a^i’$, usar en su lugar $$a^i{}’$
+
+0.4.47  \underbrace y \overbrace, que producen llaves bajo o sobre el texto. Un subíndice tras un \underbrace o un superíndice tras un \overbrace aparece como una etiqueta en la llave, e.g. (\,\underbrace{a,\ldots, a}_{15}\,). (repetido)?
+
+0.4.48 Por ejemplo, podemos conseguir c a b mediante \mathop{a}\limits_b^c. El primer comando convierte en operador a la a, \limits delente de un subíndice o un superíndice y después de un operador hace que éste aparezca debajo o arriba del signo anterior en lugar de a la derecha. E.g. $\lim\limits_{x\rightarrow x_0}f(x)$. \nolimits hace que los subíndices y los superíndices se comporten del modo habitual en el modo display. Con \smash{} evitamos que una fórmula insertada en el texto, como Z b a x 2 dx separe las líneas anterior o siguiente como en este párrafo.
+
+
+---------------------------------------------
+
 0.4.12 Des-incrustar el visualizador de pdf en TexMaker:
 	sol. En la parte superior izquierda ir a: TexMaker > preferencias > Ordenes > Visualizador de PDF > incrustar (off)
 
@@ -49,3 +99,4 @@ README
  	"pdflatex" -synctex=1 -interaction=nonstopmode --shell-escape %.tex
 	Luego compilar con este cambio. Esta bandera creará una nueva carpeta en la carpeta principal llamada “svg-inkscape” el cual contendrá los dos archivos .pdf y .pdf_latex. Y a la vez la compilación se debe ejecutar correctamente. El erro que comúnmente pasa cuando no se sigue este procedimiento es usualmente el siguiente:
 	! Package svg Error: File `LOGO_UNIVERSITY_svg-tex.pdf' is missing.
+

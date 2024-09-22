@@ -311,3 +311,33 @@ And later reinit the Git:
 	% git status
 Credits: 
 https://stackoverflow.com/questions/52522565/git-is-not-working-after-macos-update-xcrun-error-invalid-active-developer-p (08.08.2024)
+
+0.2.38 Mostrar los commit con la fecha en que se agregó:
+git log --oneline  --pretty=format:'%h %ad %s’ 
+Mas opciones en https://moraguex.gitbooks.io/trabajando-con-git/content/listar_el_historial_de_commits.html
+
+0.4.49 Problem cloning a project from GitHub: En escénica este problema surge cuando la velocidad de subida de internet es pequeña, por ejemplo 1Mb/s
+git clone https://github.com/user/project
+Cloning into ‘project’…
+remote: Enumerating objects: 1845, done.
+remote: Counting objects: 100% (265/265), done.
+remote: Compressing objects: 100% (197/197), donelin.
+error: RPC failed; curl 92 HTTP/2 stream 0 was not closed cleanly: CANCEL (err 8)
+error: 6705 bytes of body are still expected
+fetch-pack: unexpected disconnect while reading sideband packet
+fatal: early EOF
+fatal: fetch-pack: invalid index-pack output
+Sol. Execute 
+	git config --global http.postBuffer 157286400
+For an explanation see: https://stackoverflow.com/questions/66366582/github-unexpected-disconnect-while-reading-sideband-packet
+
+0.4.51 Checar cambios entre el último commit y la versión actual previo a hacer el siguiente commit:
+Sol. 
+	% git diff file.py
+Algunos commando de vim funcionan, por ejemplo shift + g. Con
+% git diff --stat (guiones dobles)
+Se obtiene el número de  lineas agregadas  y eliminadas antes del git add. Si queremos ver el tamaño de los archivos modificados después del git add
+Usar: 
+	% git diff --cached --name-only | xargs -I{} du -h {}
+
+git ls-files -s | awk '{print $4}' | xargs stat --format="%s" | awk '{total += $1} END {print total, "bytes"}' (No funciona, debería obtener el total)

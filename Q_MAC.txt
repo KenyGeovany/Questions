@@ -258,7 +258,33 @@ https://www.adaweb.es/comandos-para-apagar-y-reiniciar-ubuntu/
 0.2.33 Donde puedo ver los pagos realizados en subscripciones por la Mac?
 	Sol: https://reportaproblem.apple.com/?s=6
 
+0.2.34 Reparar problema: “macOS está usando el elemento “Img2.jpg” y no se puede abrir.”
+	Sol. Escribir en terminal:
+	sudo xattr -d -r com.apple.FinderInfo /Volumes/dir_name/Img2.jpg
+	Para pegar la dirección del archivo basta con arrastrar el archivo hasta la terminal.
+	Nota: escribir un programa que haga esto con todos los archivos.
 
+0.2.35 No funciona Adblock para bloquear anuncios:
+	Sol.  Usar Google Chrome, e instalar las extensiones:
+		- Adblockplus para bloquear anuncios emergentes.
+		- Adblockplus para YouTube para anuncios en YouTube.
+		Deprecated in 2024 by new politics. The best solution is to use brave with google as searcher.
+
+0.2.x Evitar pop ups en navegador Safari (caliente mx, etc)
+
+0.2.x Imprimir a dos caras de forma rápida.
+
+
+0.2.36 Cerrar permanentemente la barra de herramientas de Adobe reader
+Sol. Ir a preferencias -> documentos -> recordar estado actual de herramientas.
+
+
+0.2.37 Comprimir archivos en formato zip con contraseña:
+Sol. 
+Un archivo
+zip -e comprimido.zip file.txt
+Un directorio
+zip -er comprimido.zip dir_name
 
 
 -------------------------------------------

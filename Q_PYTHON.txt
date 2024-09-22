@@ -95,3 +95,14 @@ En esta carpeta se se encuentras las librerías, en particular, se encuentran la
 Problems, errors an Questions using PYTHON
 
 0.0 Installation
+
+0.4.50 Para llamar archivos de python cuando __init__.py no funciona
+Sol. 
+import sys
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+0.4.52 Crear un ejecutables en python
+% python3.11 -m pip install pyinstaller
+% pyinstaller --version
+% pyinstaller --onefile script.py
+Aparecerá un archivo script.spec y un directorio dist/ con el ejecutable. Sacaralo de la carpeta a donde está script.py (para que no se pierda la integridad de los paths.) Finalmente ejecutar en shell con ./script arg1 arg2 …
