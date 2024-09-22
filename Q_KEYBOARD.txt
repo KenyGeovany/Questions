@@ -1,0 +1,115 @@
+0.2 Atajos de teclado
+
+https://support.apple.com/es-es/HT201236
+
+ATAJOS DE MAC
+
+0.3.1 cmd + y : En safari para ver el historial de navegación.
+0.3.2 ctrl + click en Trpd: botón derecho del Trackpad.
+0.3.3 cmd + Q: Cerrar ventana
+0.3.4 cmd + W: Cerrar Ventana actual.
+0.3.5 cmd + M: Minimizar ventana al dock.
+0.3.6 cmd + T: Abrir nueva pestaña.
+0.3.7 cmd + H: Minimizar ventana actual.
+0.3.7 cmd + X: cortar.
+0.3.8 cmd + C: copiar.
+0.3.9 cmd + V: pegar.
+0.3.10 cmd + Z: deshacer.
+0.3.11 cmd + A: seleccionar todo.
+0.3.12 cmd + P: Imprimir.
+0.3.13 cmd + S: Guardar.
+0.3.14 opt + cmd + Esc: Forzar salida.
+0.3.15 ctrl + cmd + F: Pantalla completa.
+
+0.3.16 BarEsp: Av Page
+0.3.17 cmd + tab: Cambiar a la ventana más reciente.
+0.3.18 cmd + 1,2,3,… : Cambiar de ventana a la ventana 1,2,3… en Safari,…
+0.3.19 may + cmd + 3: screen de pantalla.
+0.3.20 may + cmd + 4: screen recortado de pantalla.
+0.3.21 may + cmd + 5: screen personalizado de pantalla.
+0.3.22 may + cmd + N: Abrir nueva ventana de navegador.
+0.3.23 cmd + , : configuración de la app en primer plano.
+0.3.24 cmd + F: Barra de búsqueda.
+
+0.3.25 cmd + BarEsp: Abrir - cerrar Spotlight.
+0.3.26 cmd + O: Abrir explorador de archivos.
+0.3.27 ctrl + cmd + Q : bloquear pantalla.
+0.3.28 may + cmd + Q : Cerrar sesión. Se pide confirmación.
+
+0.3.45 Cmd + ´(¨): Cambiar ventanas de una misma aplicación
+0.3.61 cmd + option + esc : Ventana para forzar salida de aplicaciones.
+0.3.62 Doble click sobre mouse: click derecho.
+0.3.50 ctrl + tab : Cambiar de ítem seleccionado para realizar alguna acción.
+0.3.51 cmd + option + v : mover archivos copiados con cmd + c.
+
+
+FUNCIONES RÁPIDAS DEL FINDER
+
+0.3.29 cmd + D : duplicar los archivos seleccionados.
+0.3.30 cdm + E: expulsar disco o volumen seleccionado.
+0.3.31 cmd + F: Iniciar una búsqueda de Soptlight en la ventana Finder.
+0.3.32 cmd + I : mostrar detalles del archivo.
+0.3.33 cmd + R: Mostrar archivo original de un alias (acceso directo)
+0.3.34 May + cmd + C: abrir la ventana Equipo
+0.3.35 May + cmd + D: Abrir la carpeta Escritorio
+0.3.36 May + cmd + F: Abrir la ventana Recientes
+0.3.37 May + cmd + G: Abrir la ventana Ir a la carpeta
+0.3.38 May + cmd + H : Abrir la carpeta de inicio de la cuenta de usuario de MacOs activa.
+0.3.47 cmd + shift + .   :  Ocultar y desocultar archivos en Finder.
+
+ATAJOS DE NAVEGADOR ¿SAFARI?
+
+0.3.39 cmd + retro : Botón suprimir
+0.3.40 cmd + R : Recargar Navegador.
+0.3.41 fn + up :  Re page
+0.3.42 fn + down : Av Page 
+0.3.43 cmd + up: Botón Inicio.
+0.3.44 cmd + down: Botón Fin.
+
+0.3.48 ctrl + tab : Cambiar pestañas en safari hacía la derecha.
+0.3.49 ctrl + shift + tab : Cambiar pestañas en safari hacía la izquierda.
+
+ATAJOS DE CLION
+
+0.3.46 option + shift + clickMouse : Escribir lo mismo en múltiples lineas (CLion)
+
+ATAJOS DE TECLADO DE “VISTA PREVIA” (MAC) PARA IMAGENES:
+
+0.3.52 cmd + L: Girar a la izquierda
+0.3.53 cmd + F: Girar a la derecha
+0.3.54 cmd + K: Recortar parte seleccionada
+0.3.55 cmd + S: Guardar
+0.3.56
+
+ATAJOS EN EDITORES DE TEXTO: (CMD, CLion, PyCharm, Matlab, etc)
+
+0.3.57 Mayusc + tab : Mover texto seleccionado a la derecha. 
+0.3.58 Shift + Mayusc + tab : Mover texto seleccionado a la izquierda.
+0.3.59 cmd + K:  En muchos programas sirve para limpiar la pantalla 
+0.3.60 cmd + > + z : Abrir pestañas cerradas.
+
+ATAJOS EN YOUTUBE
+0.3.62 c: poner o quitar subtítulos en youtube
+0.3.62.1 m: Quitara sonido en YouTube
+
+ATAJOS DE PYCHARM
+0.3.63 cmd + shift + (-) : contrae todos los bloques de funciones en pycharm
+
+COMANDOS MÁS USADOS EN VI-¿VIM?
+	Sol: - vi file (abrir archivo)
+		- i (editar archivo, desde la posición actual del cursor)
+		- l (introduce texto al inicio de la linea donde se encuentra el cursor)
+		- esc (regresar a comandos, salir de edición)
+		- :q (salir del editor sin guardar)
+		- :wq (salir y guardar)
+		- :q! (Forzar salir sin guardar)
+		- :G (ir al final del archivo)
+		- :H (Desplazamiento superior de pantalla)
+		- :L (Desplazamiento inferior de pantalla)
+		- :Ctrl + B (Función similar a Repag.)
+		- :Ctrl + F (Función similar a Avpag.)
+		- :0 (Nos lleva hasta el inicio de la línea actual)
+		- :$ (Nos lleva hasta al final de la línea actual)
+		- :w (Desplazamiento una palabra a la derecha)
+		- :b (Desplazamiento una palabra a la izquierda)
+		Ref: https://openwebinars.net/blog/vim-manual-de-uso-basico/
